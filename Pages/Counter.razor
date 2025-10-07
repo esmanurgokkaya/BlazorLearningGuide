@@ -10,8 +10,21 @@
 <!-- this method name is lambda expression and it is used to define the click event handler inline -->
 <!-- this do the same thing as the IncrementCount method below -->
 
+<!-- Input event handling demo -->
+<div class="m-4">
+<input type="text" @oninput = "HandleInput" />
+<p>@text</p>
+</div>
+
 @code {
     private int currentCount = 0;
+
+    // Input event handling demo
+    string text = "";
+    private void HandleInput(ChangeEventArgs e)
+    {
+        text = (string)e.Value!;
+    }
 
 
     // Define a parameter to set the increment value 
