@@ -16,9 +16,14 @@
 <p>@text</p>
 </div>
 
+<!-- Mouse over event handling demo -->
+<div style="border: 1px solid black;" @onmouseover="MouseOverDiv">
+<p>@divText</p>
+</div>
+
 @code {
     private int currentCount = 0;
-
+    private string divText = "";
     // Input event handling demo
     string text = "";
     private void HandleInput(ChangeEventArgs e)
@@ -26,6 +31,11 @@
         text = (string)e.Value!;
     }
 
+    // Mouse over event handling demo
+    private void MouseOverDiv(MouseEventArgs e)
+    {
+        divText = "you are hovering over the div";
+    }
 
     // Define a parameter to set the increment value 
     [Parameter]
