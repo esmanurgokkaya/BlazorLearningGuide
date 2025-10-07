@@ -11,8 +11,12 @@
 @code {
     private int currentCount = 0;
 
+
+    // Define a parameter to set the increment value 
+    [Parameter]
+    public int IncrementValue { get; set; } = 1;
     private void IncrementCount()
     {
-        currentCount++;
+        currentCount += IncrementValue;
     }
 }
